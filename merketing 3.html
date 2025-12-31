@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>KÔRA Studio Café – Café, cuerpo y calma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="KÔRA Studio Café: café de especialidad, pilates reformer y bienestar en un mismo espacio urbano."
+  />
+
+  <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      /* Paleta chic / wellness */
+      --bg: #f7f3ef;
+      --bg-soft: #f2e8df;
+      --accent: #c49a7e;
+      --accent-soft: #e3c9b4;
+      --dark: #2f2925;
+      --text: #4b4038;
+      --muted: #8f8478;
+      --white: #ffffff;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1140px, 92vw);
+      margin: 0 auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(18px);
+      background: rgba(247, 243, 239, 0.8);
+      border-bottom: 1px solid rgba(196, 154, 126, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 30% 20%,
+        #fefaf6,
+        var(--accent-soft)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      color: var(--dark);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo-text span:first-child {
+      font-family: "Playfair Display", serif;
+      letter-spacing: 0.26em;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .logo-text span:last-child {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--dark);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 3px;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--dark);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(196, 154, 126, 0.7);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      background: var(--dark);
+      color: var(--bg);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 48px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: rgba(227, 201, 180, 0.3);
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 42px);
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 460px;
+      margin-bottom: 24px;
+    }
+
+    .hero-slogan {
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      padding: 11px 22px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--bg);
+      border-color: var(--dark);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: rgba(247, 243, 239, 0.9);
+      color: var(--dark);
+      border-color: rgba(143, 132, 120, 0.4);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-meta span::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, #fff9f3, #e4d2c3);
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-main {
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-main-img {
+      height: 260px;
+      width: 100%;
+      object-fit: cover;
+      filter: saturate(1.1);
+    }
+
+    .hero-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(22, 18, 15, 0.78);
+      color: var(--bg);
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .hero-tag span:first-child {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 10px;
+      color: rgba(247, 243, 239, 0.8);
+    }
+
+    .hero-tag span:last-child {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      right: -10px;
+      bottom: -16px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      box-shadow: var(--shadow-soft);
+      font-size: 11px;
+      max-width: 190px;
+    }
+
+    .hero-floating-card strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .hero-floating-card span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    section h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    section .section-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    section .section-desc {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 26px;
+    }
+
+    /* VISIÓN / ESTUDIO */
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .vision-points {
+      display: grid;
+      gap: 18px;
+    }
+
+    .vision-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .vision-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(227, 201, 180, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .vision-item h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 4px;
+    }
+
+    .vision-item p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .vision-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 10px;
+    }
+
+    .vision-photo-grid img {
+      border-radius: 20px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .vision-photo-grid img:nth-child(2) {
+      margin-top: 26px;
+    }
+
+    /* GALERÍA */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-grid img {
+      border-radius: 18px;
+      height: 130px;
+      object-fit: cover;
+    }
+
+    .gallery-grid img:nth-child(1),
+    .gallery-grid img:nth-child(4) {
+      height: 210px;
+    }
+
+    .gallery-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* CLASES Y PRECIOS */
+
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: rgba(196, 154, 126, 0.1);
+      border-radius: var(--radius-pill);
+      padding: 4px 10px;
+      color: var(--accent);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .price span {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 6px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card ul li::before {
+      content: "– ";
+      color: var(--accent);
+    }
+
+    .card-cta {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .card-cta span {
+      font-size: 13px;
+    }
+
+    /* CARTA CAFETERÍA */
+
+    .menu-wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .menu-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .menu-tab {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .menu-tab.active {
+      background: var(--dark);
+      color: var(--bg);
+      border-color: var(--dark);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .menu-list {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 18px 18px 12px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(190, 170, 150, 0.5);
+      font-size: 13px;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .menu-item-info h3 {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .menu-item-info p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .menu-item-price {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+
+    .menu-photo {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .menu-photo img {
+      height: 280px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* RESERVAS */
+
+    .booking {
+      background: linear-gradient(
+        135deg,
+        rgba(227, 201, 180, 0.32),
+        rgba(247, 243, 239, 0.96)
+      );
+      border-radius: var(--radius-lg);
+      padding: 24px 24px 12px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .booking-form-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .booking label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--dark);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .booking input,
+    .booking select,
+    .booking textarea {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(143, 132, 120, 0.45);
+      padding: 9px 12px;
+      font-size: 13px;
+      font-family: inherit;
+      background: rgba(255, 255, 255, 0.86);
+      outline: none;
+      transition: border 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .booking textarea {
+      border-radius: 18px;
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .booking input:focus,
+    .booking select:focus,
+    .booking textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(196, 154, 126, 0.4);
+    }
+
+    .booking-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .booking-side {
+      font-size: 13px;
+      color: var(--dark);
+    }
+
+    .booking-side h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 6px;
+    }
+
+    .booking-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(47, 41, 37, 0.06);
+      margin-bottom: 10px;
+    }
+
+    .booking-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .booking-list {
+      list-style: none;
+      margin: 10px 0 10px;
+      padding-left: 0;
+    }
+
+    .booking-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .booking-mini {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* UBICACIÓN / CONTACTO */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-info {
+      font-size: 13px;
+      color: var(--muted);
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--dark);
+      width: 90px;
+      flex-shrink: 0;
+    }
+
+    .map {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      height: 260px;
+    }
+
+    .map iframe {
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      padding: 28px 0 24px;
+      border-top: 1px solid rgba(196, 154, 126, 0.35);
+      margin-top: 28px;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      align-items: center;
+    }
+
+    .footer-row strong {
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .vision-grid,
+      .menu-wrapper,
+      .booking,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cards-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .booking-form-group {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        inset: 60px 4vw auto;
+        flex-direction: column;
+        background: rgba(247, 243, 239, 0.98);
+        padding: 16px;
+        border-radius: 18px;
+        box-shadow: var(--shadow-soft);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.18s ease;
+      }
+
+      .nav-links.open {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .cards-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img:nth-child(1),
+      .gallery-grid img:nth-child(4),
+      .gallery-grid img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="logo">
+        <div class="logo-mark">K</div>
+        <div class="logo-text">
+          <span>Studio Café</span>
+          <span>KÔRA</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
+
+      <nav class="nav-links">
+        <a href="#estudio">Estudio</a>
+        <a href="#clases">Clases</a>
+        <a href="#carta">Carta</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button class="nav-cta" onclick="scrollToSection('reservas')">
+        Reservar clase
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">
+          <div class="badge-dot"></div>
+          Bienestar & café de especialidad
+        </div>
+        <h1 class="hero-title">
+          El lugar donde tu cuerpo,<br />
+          tu café y tu calma<br />
+          se encuentran.
+        </h1>
+        <p class="hero-subtitle">
+          KÔRA Studio Café es un espacio urbano que une pilates reformer,
+          café de especialidad y momentos bonitos en un mismo lugar.
+        </p>
+        <p class="hero-slogan">Café, cuerpo y calma en un mismo ritual.</p>
+
+        <div class="hero-cta-row">
+          <button class="btn-primary" onclick="scrollToSection('reservas')">
+            Reservar primera clase
+          </button>
+          <button class="btn-ghost" onclick="scrollToSection('carta')">
+            Ver carta de café & brunch
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <span>Estudio boutique de pilates reformer</span>
+          <span>Cafetería de especialidad & brunch healthy</span>
+          <span>Comunidad & bienestar urbano</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-main">
+            <!-- FOTO NUEVA DEL HERO -->
+            <img
+  class="hero-main-img"
+  src="https://www.pentfitness.com/cdn/shop/files/image1_900x.png?v=1763408639"
+  alt="Vista elegante de estudio y equipamiento wellness"
+/>
+
+            <div class="hero-tag">
+              <span>Bienestar urbano</span>
+              <span>Pilates, café & comunidad en un solo espacio.</span>
+            </div>
+          </div>
+
+          <div class="hero-floating-card">
+            <strong>Agenda tu ritual KÔRA</strong>
+            <span>Combina tu clase de pilates con tu latte favorito y quédate
+              a trabajar, leer o simplemente estar.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ESTUDIO / VISIÓN -->
+  <section id="estudio">
+    <div class="container">
+      <div class="section-eyebrow">Visión & espacio</div>
+      <h2>Un refugio bonito para cuidarte sin prisa.</h2>
+      <p class="section-desc">
+        KÔRA Studio Café nace para simplificar tu día a día: entrenar, tomar
+        un buen café, socializar y reconectar contigo en un ambiente cálido,
+        minimalista y fotogénico.
+      </p>
+
+      <div class="vision-grid">
+        <div class="vision-points">
+          <div class="vision-item">
+            <div class="vision-icon">☕</div>
+            <div>
+              <h3>Café de especialidad</h3>
+              <p>
+                Tostadores de especialidad, leches vegetales y bebidas
+                pensadas para acompañar tu rutina de bienestar, desde el
+                primer espresso hasta tu matcha latte.
+              </p>
+            </div>
+          </div>
+
+          <div class="vision-item">
+            <div class="vision-icon">✨</div>
+            <div>
+              <h3>Estudio boutique</h3>
+              <p>
+                Clases reducidas de pilates reformer y formatos slow movement
+                para trabajar fuerza, postura y presencia con atención plena.
+              </p>
+            </div>
+          </div>
+
+          <div class="vision-item">
+            <div class="vision-icon">🤍</div>
+            <div>
+              <h3>Comunidad & lifestyle</h3>
+              <p>
+                Más que un entrenamiento: eventos, charlas, brunches
+                wellness y un espacio para compartir un estilo de vida
+                consciente, creativo y muy instagrammeable.
+              </p>
+            </div>
+          </div>
+        </div>
+
+       <div class="vision-photo-grid">
+  <!-- MATCHA LATTE -->
+  <img
+    src="https://iswari.s3.eu-west-3.amazonaws.com/blog/bqrvmw-.jpg"
+    alt="Matcha latte elegante en taza de cerámica"
+  />
+
+  <!-- PILATES CLASS -->
+  <img
+    src="https://www.kuwa.co.uk/cdn/shop/files/Screenshot_2024-11-10_at_14.53.35.png?v=1731250424&width=1500"
+    alt="Clase de pilates reformer en estudio boutique"
+  />
+
+  <!-- LIFESTYLE WELLNESS -->
+  <img
+    src="https://laciutat.cat/uploads/s1/38/38/66/8/balanzen-andrea-garte-abril-cols-1_26_1200x900.jpeg"
+    alt="Lifestyle wellness con ambiente relajado y chic"
+  />
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section>
+    <div class="container">
+      <div class="section-eyebrow">Detalles que inspiran</div>
+      <h2>Rincones bonitos, luz suave y muchas fotos.</h2>
+      <p class="section-desc">
+        Cada rincón de KÔRA está pensado para que te apetezca quedarte:
+        mesas de madera clara, flores naturales, cerámica bonita y una luz
+        que hace que todo se vea precioso en foto.
+      </p>
+
+    <div class="gallery-grid">
+  <img
+    src="https://images.squarespace-cdn.com/content/v1/6432bf9027af36646fbbf58c/d5593f49-6f3b-400f-96ae-e2d0eed2a6de/IMG_7815.jpeg"
+    alt="Estudio boutique luminoso y elegante"
+  />
+  <img
+    src="https://images.lifestyleasia.com/wp-content/uploads/sites/2/2025/06/12145132/best-pilates-studios-hong-kong-latte-pilate-996x560.jpg"
+    alt="Clase de pilates reformer lifestyle wellness"
+  />
+  <img
+    src="https://www.karenoliver.co.uk/wp-content/uploads/2024/01/Pilates-Studio-Edits-Rear-6-Reformer-light-on-14.jpeg"
+    alt="Estudio de pilates reformer minimalista"
+  />
+  <img
+    src="https://yourreformer.com.au/cdn/shop/files/IMG_0696.jpg?v=1695626791"
+    alt="Equipo de pilates reformer premium"
+  />
+</div>
+
+      <p class="gallery-note">
+        
+      </p>
+    </div>
+  </section>
+
+  <!-- CLASES Y PRECIOS -->
+  <section id="clases">
+    <div class="container">
+      <div class="section-eyebrow">Clases & membresías</div>
+      <h2>Diseñamos tu ritual de movimiento ideal.</h2>
+      <p class="section-desc">
+        Sesiones de pilates reformer en grupos reducidos, horarios flexibles
+        y packs que combinan entrenamiento y café para que el bienestar
+        encaje en tu rutina.
+      </p>
+
+      <div class="cards-row">
+        <article class="card">
+          <div class="card-tag">Primera vez</div>
+          <h3>Sesión de prueba</h3>
+          <p class="price">
+            18€
+            <span>Clase única de pilates reformer</span>
+          </p>
+          <p>
+            Ideal para conocer el estudio, tu instructora y la sensación del
+            reformer antes de decidirte por un bono.
+          </p>
+          <ul>
+            <li>Duración 50 minutos.</li>
+            <li>Asesoramiento inicial y ajuste de niveles.</li>
+            <li>Incluye agua infusionada detox.</li>
+          </ul>
+          <div class="card-cta" onclick="scrollToSection('reservas')">
+            Reservar prueba <span>↗</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Favorito</div>
+          <h3>Bono 8 clases</h3>
+          <p class="price">
+            120€
+            <span>4–5 semanas aprox.</span>
+          </p>
+          <p>
+            Nuestro pack más popular para crear hábito y notar cambios
+            reales en tu cuerpo, tu postura y tu energía.
+          </p>
+          <ul>
+            <li>Clases reducidas (máx. 6 personas).</li>
+            <li>Flexibilidad de horarios mediante reserva online.</li>
+            <li>Incluye 2 cafés de especialidad para usar cuando quieras.</li>
+          </ul>
+          <div class="card-cta" onclick="scrollToSection('reservas')">
+            Elegir este bono <span>↗</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Lifestyle</div>
+          <h3>Plan KÔRA Full</h3>
+          <p class="price">
+            165€
+            <span>Mensualidad bienestar</span>
+          </p>
+          <p>
+            Para quienes quieren que KÔRA sea su segundo hogar: movimiento,
+            café, trabajo y momentos bonitos en un mismo lugar.
+          </p>
+          <ul>
+            <li>12 clases al mes de pilates reformer.</li>
+            <li>1 bebida de café o té al día (take away o en sala).</li>
+            <li>Descuento en eventos & brunches especiales.</li>
+          </ul>
+          <div class="card-cta" onclick="scrollToSection('reservas')">
+            Unirme al plan <span>↗</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTA CAFETERÍA -->
+  <section id="carta">
+    <div class="container">
+      <div class="section-eyebrow">Carta café & brunch</div>
+      <h2>Platos bonitos, ricos y pensados para sentirte bien.</h2>
+      <p class="section-desc">
+        Opciones plant-based, panes de masa madre, bowls de temporada y
+        cafés de especialidad para acompañar tu rutina de estudio, trabajo o
+        after-class con tus amigas.
+      </p>
+
+      <div class="menu-wrapper">
+        <div>
+          <div class="menu-tabs">
+            <button class="menu-tab active" data-menu="brunch">
+              Brunch & bowls
+            </button>
+            <button class="menu-tab" data-menu="cafe">
+              Cafés & lattes
+            </button>
+            <button class="menu-tab" data-menu="bebidas">
+              Smoothies & otros
+            </button>
+          </div>
+
+          <div class="menu-list" id="menu-list"></div>
+        </div>
+
+      <div class="menu-photo">
+  <img
+    src="https://especiasmontero.com/wp-content/uploads/2025/05/Brunch.jpg"
+    alt="Brunch saludable y estiloso en KÔRA Studio Café"
+  />
+</div>
+
+   
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section id="reservas">
+    <div class="container">
+      <div class="section-eyebrow">Reservas</div>
+      <h2>Reserva tu clase y añade tu café favorito.</h2>
+      <p class="section-desc">
+        Cuéntanos qué día te viene bien y qué tipo de clase estás buscando.
+        Te confirmaremos la reserva por email o WhatsApp en cuanto recibamos
+        tu solicitud.
+      </p>
+
+      <div class="booking">
+        <form
+          onsubmit="handleBooking(event)"
+          aria-label="Formulario de reserva KÔRA Studio Café"
+        >
+          <div class="booking-form-group">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="booking-form-group">
+            <div>
+              <label for="fecha">Fecha</label>
+              <input id="fecha" name="fecha" type="date" required />
+            </div>
+            <div>
+              <label for="hora">Hora aproximada</label>
+              <select id="hora" name="hora" required>
+                <option value="">Selecciona una franja</option>
+                <option value="mañana">Mañana (8:00–11:00)</option>
+                <option value="mediodia">Mediodía (12:00–15:00)</option>
+                <option value="tarde">Tarde (16:00–19:00)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="booking-form-group">
+            <div>
+              <label for="tipo-clase">Tipo de clase</label>
+              <select id="tipo-clase" name="tipo-clase" required>
+                <option value="">Elige una opción</option>
+                <option value="reformer-suave">
+                  Pilates reformer – suave
+                </option>
+                <option value="reformer-dinamico">
+                  Pilates reformer – dinámico
+                </option>
+                <option value="ritual-kora">
+                  Ritual KÔRA (clase + café)
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="personas">Personas</label>
+              <select id="personas" name="personas" required>
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="mensaje">Notas / café favorito</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Ej: Primera vez. Me gusta el iced matcha latte con avena."
+            ></textarea>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <button type="submit" class="btn-primary">
+              Enviar solicitud de reserva
+            </button>
+            <p class="booking-note">
+              .
+            </p>
+          </div>
+        </form>
+
+        <aside class="booking-side">
+          <div class="booking-pill">
+            <span class="booking-pill-dot"></span>
+            Clases reducidas & ambiente cuidado
+          </div>
+          <h3>Cómo funciona</h3>
+          <p>
+            Rellena el formulario con tu horario ideal. Te propondremos el
+            mejor hueco disponible y te enviaremos la confirmación junto con
+            los detalles para el pago.
+          </p>
+
+          <ul class="booking-list">
+            <li>Por ahora trabajamos con grupos de máximo 6 personas.</li>
+            <li>Llega 10 minutos antes para conectar y respirar.</li>
+            <li>
+              Después de tu clase, tu mesa y tu café te estarán esperando en
+              la zona de cafetería.
+            </li>
+          </ul>
+
+          <p class="booking-mini">
+            ¿Dudas rápidas? Escríbenos por Instagram o WhatsApp y te ayudamos
+            a encontrar tu ritual perfecto.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO / UBICACIÓN -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-eyebrow">Ubicación & contacto</div>
+      <h2>Estamos donde pasan cosas bonitas.</h2>
+      <p class="section-desc">
+        Un estudio-cafetería en pleno corazón de Santa Cruz: entrenas, trabajas un rato, te tomas algo con tus amigas y
+        desconectas del ruido de la ciudad.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-row">
+            <div class="contact-label">Dirección</div>
+            <div>
+              Plaza Weyler<br />
+              Santa Cruz de Tenerife
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-label">Horarios</div>
+            <div>
+              Lunes a viernes: 8:00 – 20:30<br />
+              Sábados: 9:00 – 14:30<br />
+              Domingos & festivos: eventos especiales.
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-label">Contacto</div>
+            <div>
+              hola@korastudiocafe.com<br />
+              Instagram: @korastudiocafe<br />
+              WhatsApp: +34 000 000 000
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-label">Extra</div>
+            <div>
+              WiFi, enchufes, música suave y muchas plantas. Perfecto para
+              venir con tu portátil después de clase o para una merienda
+              lenta y bonita.
+            </div>
+          </div>
+        </div>
+
+        <div class="map">
+          <!-- Mapa de ejemplo, sustituye por tu ubicación real si quieres -->
+          <iframe
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps?q=Plaza%20Weyler%2C%20Santa%20Cruz%20de%20Tenerife&output=embed"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> KÔRA Studio Café · Todos los derechos reservados.</div>
+      <div>
+        Diseñado con amor por <strong>Ángel Horas Hernández</strong>
+        <!-- Cambia [Tu Nombre] por tu nombre -->
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.offsetTop - 70,
+        behavior: "smooth",
+      });
+    }
+
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    const menuData = {
+      brunch: [
+        {
+          nombre: "Tostada KÔRA avo",
+          desc: "Pan de masa madre, aguacate, limón, semillas y topping de tomatitos confitados.",
+          precio: "9,50€",
+        },
+        {
+          nombre: "Huevos slow brunch",
+          desc: "Huevos eco al punto, espinacas salteadas, labneh suave y pan de centeno.",
+          precio: "10,90€",
+        },
+        {
+          nombre: "KÔRA glow bowl",
+          desc: "Bowl de yogur vegetal, granola casera, fruta de temporada y crema de frutos secos.",
+          precio: "8,90€",
+        },
+        {
+          nombre: "Sandwich studio",
+          desc: "Sourdough, hummus, verduras asadas, rúcula y pesto suave.",
+          precio: "9,20€",
+        },
+      ],
+      cafe: [
+        {
+          nombre: "Espresso / Doble espresso",
+          desc: "Blend de la casa de tostadores de especialidad.",
+          precio: "2,00€ / 2,40€",
+        },
+        {
+          nombre: "Flat white",
+          desc: "Café intenso con leche microespumada.",
+          precio: "3,10€",
+        },
+        {
+          nombre: "Latte KÔRA",
+          desc: "Tu latte clásico con opción de avena, almendra o soja.",
+          precio: "3,10€",
+        },
+        {
+          nombre: "Vainilla caramel latte",
+          desc: "Latte suave con sirope casero de vainilla & caramelo salado.",
+          precio: "3,90€",
+        },
+        {
+          nombre: "Matcha latte",
+          desc: "Matcha grado ceremonial batido a mano.",
+          precio: "3,90€",
+        },
+      ],
+      bebidas: [
+        {
+          nombre: "Green glow smoothie",
+          desc: "Espinaca, piña, manzana, jengibre y limón.",
+          precio: "5,90€",
+        },
+        {
+          nombre: "Pink energy smoothie",
+          desc: "Frutos rojos, plátano, bebida vegetal y proteína vegana (opcional).",
+          precio: "6,20€",
+        },
+        {
+          nombre: "Agua infusionada detox",
+          desc: "Con cítricos, pepino y menta.",
+          precio: "2,80€",
+        },
+        {
+          nombre: "KÔRA iced chai",
+          desc: "Chai especiado con leche fría y hielo.",
+          precio: "4,10€",
+        },
+      ],
+    };
+
+    const menuListEl = document.getElementById("menu-list");
+    const menuTabs = document.querySelectorAll(".menu-tab");
+
+    function renderMenu(type) {
+      const items = menuData[type] || [];
+      menuListEl.innerHTML = items
+        .map(
+          (item) => `
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h3>${item.nombre}</h3>
+            <p>${item.desc}</p>
+          </div>
+          <div class="menu-item-price">${item.precio}</div>
+        </div>
+      `
+        )
+        .join("");
+    }
+
+    menuTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        menuTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        const type = tab.getAttribute("data-menu");
+        renderMenu(type);
+      });
+    });
+
+    renderMenu("brunch");
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+
+    function handleBooking(e) {
+      e.preventDefault();
+      alert(
+        "¡Gracias! Hemos recibido tu solicitud de reserva. Te contactaremos para confirmar el horario."
+      );
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
